@@ -3,7 +3,7 @@ public class MyPrinter {
     //printer attributes
     private int inkAmount;
     private int numPaper = 0;
-    private int inkCostPerPage = 3;
+    private int inkCostPerPage = 1;
 
     //printer capacity attributes
     private final int MAX_PAPER = 40;
@@ -104,6 +104,22 @@ public class MyPrinter {
     //returns the HasPaper state of the printer
     protected PrinterState getHasPaperState(){
         return hasPaper;
+    }
+
+    //returns the current state as a String
+    public String getCurrentState(){
+        if(printerState == noInk){
+            return "No ink state";
+        }else if(printerState == hasInk){
+            return "Has ink state";
+        }
+        else if(printerState == hasPaper){
+            return "Has paper state";
+        }
+        else{
+            return  "No paper state";
+        }
+
     }
 
 }

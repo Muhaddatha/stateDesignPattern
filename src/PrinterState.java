@@ -1,4 +1,4 @@
-
+//printer's state interface
 public interface PrinterState {
 
     //all ways to interact with the printer

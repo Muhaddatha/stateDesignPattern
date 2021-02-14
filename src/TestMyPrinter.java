@@ -9,7 +9,7 @@ public class TestMyPrinter {
 
         Scanner scanner = new Scanner(System.in);
 
-        String userInput = "";
+        String userInput;
 
         int userNum;
 
@@ -26,38 +26,44 @@ public class TestMyPrinter {
             else if(userInput.toUpperCase().equals("A")){
                 System.out.println("Current ink level: " + myPrinter.getInkAmount() + " grams");
                 System.out.println("Printer ink capacity: " + myPrinter.getMAX_INK() + " grams");
+                System.out.println("Current printer state: " + myPrinter.getCurrentState());
             }
             else if(userInput.toUpperCase().equals("B")){
                 System.out.println("Current paper level: " + myPrinter.getNumPaper() + " papers");
                 System.out.println("Printer paper capacity: " + myPrinter.getMAX_PAPER() + " papers");
+                System.out.println("Current printer state: " + myPrinter.getCurrentState());
             }
             else if(userInput.toUpperCase().equals("C")){
                 System.out.print("Please enter ink amount to add: ");
                 userNum = scanner.nextInt();
                 myPrinter.addInk(userNum);
                 scanner.nextLine();
+                System.out.println("Current printer state: " + myPrinter.getCurrentState());
             }
             else if(userInput.toUpperCase().equals("D")){
                 System.out.print("Please enter paper amount to add: ");
                 userNum = scanner.nextInt();
                 myPrinter.addPaper(userNum);
                 scanner.nextLine();
+                System.out.println("Current printer state: " + myPrinter.getCurrentState());
             }
             else if(userInput.toUpperCase().equals("E")){
                 System.out.print("Please enter the number of pages to print: ");
                 userNum = scanner.nextInt();
                 myPrinter.print(userNum);
                 scanner.nextLine();
+                System.out.println("Current printer state: " + myPrinter.getCurrentState());
             }
             else{
                 System.out.println("Please enter a valid option");
             }
 
-//            System.out.println("");
+            System.out.println("");
         }
     }
 
 
+    //displays options to user
     public static void displayOptions(){
         System.out.println("---------------------------------------");
         System.out.println("     Welcome to the Printer project");

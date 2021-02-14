@@ -58,6 +58,7 @@ public class HasPaper implements PrinterState{
 
     @Override
     public void addPaper(int numPaper) {
+        //too much paper for the printer's capacity
             if(printer.getNumPaper() + numPaper > printer.getMAX_PAPER()){
                 System.out.println("Cannot add this much Paper, try adding "
                         + (printer.getMAX_PAPER() - printer.getNumPaper())+ "  or less.");
